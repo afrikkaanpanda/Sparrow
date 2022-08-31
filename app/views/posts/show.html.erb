@@ -12,10 +12,11 @@
   <strong>Description:</strong>
   <%= @post.description %>
 
-  <%= button_to 'Delete', @post, method: :delete %>
+<%= button_to "Edit Post", edit_post_path, method: :get %> 
+<%= button_to 'Delete Post', @post, method: :delete %>
 </p>
 
 
-
+<div>
 <%= button_to "All Posts", posts_path, method: :get %> 
-<%= button_to "Edit Post", edit_post_path, method: :get %> 
+</div>
