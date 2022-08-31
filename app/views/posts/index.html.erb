@@ -1,0 +1,14 @@
+<h1 class= "title">Posts</h1>
+
+<% if @posts.any? %>
+
+  <% @posts.each do |post| %>
+  <p class= "title">Author:<%= post.author %></p>
+  <p class= "title">Title:<%= post.title %></p>
+  <p class= "title">Description:<%= post.description%></p>
+  <% end %>
+  <% else %>
+  <p> NO POST TO DISPLAY</p>
+<% end %>
+
+<%= button_to "Home", root_path, method: :get %> 
