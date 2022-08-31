@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   # get  "new-post",    to: "posts#new"
   # post "create-post", to: "posts#create"
   # get  "show-post",   to: "posts#show"
-  resources :posts, only:[:index, :new, :create, :show, :destroy]
+  resources :posts, only:[:index, :new, :create, :show, :destroy, :edit, :update]
 end
