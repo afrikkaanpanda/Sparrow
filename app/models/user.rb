@@ -1,13 +1,12 @@
 class User < ApplicationRecord
   has_secure_password
 
-  has_many :posts
+  # has_many :posts
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   validates :username, presence: true,
-                        uniqueness: { case_sensitive: false },
-                        length: { minimum: 8, maximum: 24 }
+                        uniqueness: { case_sensitive: false }
 
   validates :email, presence: true,
                     uniqueness: { case_sensitive: false },
