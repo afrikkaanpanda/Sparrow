@@ -18,20 +18,29 @@ class PostsController < ApplicationController
 
 
   def show
-    @post = Post.find_by(params[:id])
+    @post = Post.find(params[:id])
   end
 
   def destroy
     @post = Post.find(params[:id])
     if @post.present?
       @post.destroy
-      redirect_to posts_url, notice: "Post was successfully deleted."
+      redirect_to root_path, notice: "Post was successfully deleted."
     end
   end
 
   def edit
-    @post = Post.find_by(params[:id])
+    @post = Post.find(params[:id])
   end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      redirect_to @post, notice: "Post was successfully updated."
+    else
+      render :edit, status: :unprocessable_entity
+  end
+end
 
   private
 
