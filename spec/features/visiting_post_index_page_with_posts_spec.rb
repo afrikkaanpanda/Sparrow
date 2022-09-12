@@ -1,11 +1,14 @@
 # frozen_string_literal: true
 require "rails_helper"
 
-RSpec.feature "Visit Post Index Page", type: :feature do
+RSpec.feature "Visit Post Index Page", type: :feature, js: true do
   context "when posts are present" do
+    let(:post) { create(:post, author: "alando", title: "test", description: "this is a test") }
+    before { post }
+    
     scenario "visit Post Index Page with Posts" do
-      post = Post.create(author: "alando", title: "test", description: "this is a test")
       visit "/posts"
+    
       expect(page.body).to have_css("h1.title", text: "Posts")
       expect(page.body).to have_css("p.title", text: post.id)
       expect(page.body).to have_css("p.title", text: post.author)
