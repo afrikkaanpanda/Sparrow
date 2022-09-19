@@ -1,0 +1,43 @@
+<h1 class="title">New User</h1>
+
+<%= form_with(model: @user, url: register_path) do |form|%>
+  <% if @user.errors.any? %>
+  	<div class="alert alert-danger">
+      <% @user.errors.full_messages.each do |message|%>
+        <div><%= message%></div>
+      <% end %>
+    </div>
+  <% end %>
+
+	<div class="form-input">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name %>
+  </div>
+
+	<div class="form-input">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name %>
+  </div>
+
+	<div class="form-input">
+    <%= form.label :username %>
+    <%= form.text_field :username %>
+  </div>
+
+  <div class="form-input">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="form-input">
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </div>
+
+  <div class="form-input">
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation %>
+  </div>
+
+	<%= form.submit "Create User" %>
+<% end %>

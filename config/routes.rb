@@ -6,5 +6,9 @@ Rails.application.routes.draw do
   # get  "new-post",    to: "posts#new"
   # post "create-post", to: "posts#create"
   # get  "show-post",   to: "posts#show"
+  get "signup", to: "registrations#new"
+  post "register", to: "registrations#create"
+
   resources :posts, only:[:index, :new, :create, :show, :destroy, :edit, :update]
+  resources :users, only:[:show, :edit, :update]
 end
