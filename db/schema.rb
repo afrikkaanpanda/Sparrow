@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema[7.0].define(version: 2022_09_15_152732) do
+=======
+ActiveRecord::Schema[7.0].define(version: 2022_09_05_160446) do
+>>>>>>> 5a69e602c00c367dce577e5f039fa1ea3d597eff
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -57,8 +61,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_15_152732) do
   end
 
   create_table "users", force: :cascade do |t|
+<<<<<<< HEAD
     t.string "first_name", null: false
     t.string "last_name"
+=======
+>>>>>>> 5a69e602c00c367dce577e5f039fa1ea3d597eff
     t.string "username", null: false
     t.string "email", null: false
     t.string "password_digest", null: false

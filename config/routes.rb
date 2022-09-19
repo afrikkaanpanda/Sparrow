@@ -10,5 +10,9 @@ Rails.application.routes.draw do
   post "register", to: "registrations#create"
 
   resources :posts, only:[:index, :new, :create, :show, :destroy, :edit, :update]
+<<<<<<< HEAD
   resources :users, only:[:show, :edit, :update]
+=======
+  resources :users, only:[:new, :create, :show, :edit, :update]
+>>>>>>> 5a69e602c00c367dce577e5f039fa1ea3d597eff
 end
