@@ -3,15 +3,7 @@
 require "rails_helper"
 
 RSpec.describe "GET_edit_user_path", type: :request do
-  let(:user) do
-    {
-      first_name: "alando",
-      last_name: "wilson",
-      email: "alando.willo@gmail.com",
-      password: "Password",
-      password_confirmation: "Password",
-    }
-  end
+  let(:user) { create(:user) }
 
   it "response to be ok" do
     get "/users/#{user.id}/edit"
