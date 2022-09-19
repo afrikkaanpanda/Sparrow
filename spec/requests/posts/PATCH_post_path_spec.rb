@@ -5,8 +5,8 @@ require "rails_helper"
 RSpec.describe "PATCH_posts_path", type: :request do
 	let(:post) { create(:post) }
 	it "redirects to root_path" do
-      patch "/posts/#{post.id}", params: { post: {author: "alando", title: "test", description: "this is a test" } }
-      expect(response).to have_http_status(302)
+    patch "/posts/#{post.id}", params: { post: {author: "alando", title: "test", description: "this is a test" } }
+    expect(response).to have_http_status(302)
   end
 
 
