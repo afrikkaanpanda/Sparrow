@@ -2,10 +2,9 @@
 
 require "rails_helper"
 
-RSpec.describe "GET_edit_post_path", type: :request do
-  let(:post) { create(:post) }
+RSpec.describe "GET_session_path", type: :request do
   it "response to be ok" do
-    get "/posts/#{post.id}"
+    get sign_in_path
     expect(response).to have_http_status(:ok)
   end
 end
