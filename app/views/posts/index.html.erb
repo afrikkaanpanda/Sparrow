@@ -2,14 +2,14 @@
 
 <% if @posts.any? %>
   <% @posts.each do |post| %>
-    <p class= "title">ID: <%= post.id %></p>
-    <p class= "title">Author: <%= post.author %></p>
-    <p class= "title">Title: <%= post.title %></p>
-    <p class= "title">Description: <%= post.description.to_plain_text%></p>
-    <%= button_to "Show This Post", post_path(post), method: :get %>
+    <div class= "mb-5">
+      <p class= "title">ID: <%= post.id %></p>
+      <p class= "title">Author: <%= post.author %></p>
+      <p class= "title">Title: <%= post.title %></p>
+      <p class= "title">Description: <%= post.description.to_plain_text%></p>
+      <%= button_to "Show This Post", post_path(post), method: :get, class: "btn btn-info" %>
+    </div>
   <% end %>
 <% else %>
   <p class="empty-state">NO POST TO DISPLAY</p>
 <% end %>
-
-<%= button_to "Home", root_path, method: :get %> 

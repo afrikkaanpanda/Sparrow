@@ -7,7 +7,6 @@ RSpec.feature "Visit Post Index Page", type: :feature, js: true do
       visit "/posts"
       expect(page.body).to have_css("h1.title", text: "Posts")
       expect(page.body).to have_css("p.empty-state", text: "NO POST TO DISPLAY")
-      expect(page.body).to have_css("button", text: "Home")
     end
   end
 end

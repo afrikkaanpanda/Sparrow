@@ -20,6 +20,5 @@ RSpec.feature "New Posts", type: :feature, js: true do
     expect(page.body).to have_css("p.Description", text: description)
     expect(page.body).to have_css("button", text: "Delete")
     expect(page.body).to have_css("button", text: "Edit Post")
-    expect(page.body).to have_css("button", text: "All Posts")
   end
 end

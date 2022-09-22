@@ -6,7 +6,7 @@ RSpec.describe "POST_sessions_path", type: :request do
  let(:user) { create(:user, first_name: "alando", last_name: "wilson", username: "panda.god", email: "alando.willo@gmail.com", password: "Password", password_confirmation: "Password") }
   it "response to be redirected" do
     post login_path, params: { user: {email: user.email, password: user.password} }
-    expect(response).to redirect_to(user)
+    expect(response).to have_http_status(:redirect)
   end
 
   context "when email is nil" do

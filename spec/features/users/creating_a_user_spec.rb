@@ -32,6 +32,6 @@ RSpec.feature "New User", type: :feature, js: true do
     expect(page.body).to have_css("p.lastname", text: last_name)
     expect(page.body).to have_css("p.username", text: username)
     expect(page.body).to have_css("button", text: "Edit User")
-    expect(page.body).to have_css("button", text: "Home")
+    expect(page.body).to have_css("button", text: "Logout")
   end
 end
