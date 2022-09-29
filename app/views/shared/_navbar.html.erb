@@ -1,16 +1,57 @@
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">Home</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link" href="/posts">All Posts</a>
-        <a class="nav-link" href="/posts/new">New Post</a>
-        <a class="nav-link" href="/sign_in">Login</a>
-        <a class="nav-link" href="/signup">Register</a>
-      </div>
+
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-link">
+          <%= button_to "Home", root_path, method: :get, class: "btn btn-primary" %>
+        </li>
+
+        <li class="nav-link">
+        <%= button_to "Community Posts", posts_path, method: :get, class: "btn btn-primary" %>
+        </li>
+      </ul>
+
+    
+
+
+
+      <ul class="navbar-nav ms-auto ml-2 mb-lg-0">
+        <% if current_user %>
+            <li class="nav-link">
+              Logged in as: <%= current_user.email %>
+            </li>
+
+            <li class= "nav-link">
+            <%= button_to "Profile", user_path(current_user), method: :get, class: "btn btn-primary" %>
+            </li>
+
+            <li class= "nav-link">
+            <%= button_to "Edit User", edit_user_path(current_user), method: :get, class: "btn btn-primary" %>
+            </li>
+          
+
+            <li class="nav-link">  
+              <%= button_to "New Post", new_post_path, method: :get, class: "btn btn-primary" %>
+            </li>
+
+            <li class="nav-link">  
+              <%= button_to "Logout", logout_path, method: :delete, class: "btn btn-danger" %>
+            </li>
+
+          <% else %>
+            <li class="nav-link"> 
+              <%= button_to "Sign Up", signup_path, method: :get, class: "btn btn-primary" %>
+            </li>
+
+            <li class="nav-link"> 
+              <%= button_to "Login", sign_in_path, method: :get, class: "btn btn-primary" %>
+            </li>
+        <% end %> 
+      </ul>    
     </div>
   </div>
 </nav>

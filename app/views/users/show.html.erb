@@ -1,8 +1,11 @@
 <h1 class="title"><%= @user.first_name %>'s Profile</h1>
 
-<p class="firstname">First Name: <%= @user.first_name %></p>
-<p class="lastname">Last Name: <%= @user.last_name %></p>
 <p class="username">Username: <%= @user.username %></p>
 
-<%= button_to "Edit User", edit_user_path, method: :get, class: "btn btn-warning" %> 
-<%= button_to "Logout", logout_path, method: :delete, class: "btn btn-danger" %> 
+<% @user.posts.each do |post| %>
+  <div class= "mb-5">
+    <p>Title: <%= post.title %></p>
+    <p>Description: <%= post.description.to_plain_text %></p>
+    <%= button_to "Show This Post", post_path(post), method: :get %>
+  </div>
+<% end %>

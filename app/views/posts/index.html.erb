@@ -3,8 +3,7 @@
 <% if @posts.any? %>
   <% @posts.each do |post| %>
     <div class= "mb-5">
-      <p class= "title">ID: <%= post.id %></p>
-      <p class= "title">Author: <%= post.author %></p>
+      <p class= "title">Author: <%= post.user.first_name%></p>
       <p class= "title">Title: <%= post.title %></p>
       <p class= "title">Description: <%= post.description.to_plain_text%></p>
       <%= button_to "Show This Post", post_path(post), method: :get, class: "btn btn-info" %>

@@ -1,7 +1,9 @@
 class Post < ApplicationRecord
-    has_rich_text :description
 
-    validates :author, presence: true
+    belongs_to :user
+    
+    has_rich_text :description
+    
     validates :title, presence: true
     validates :description, presence: true
 end
