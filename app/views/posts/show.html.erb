@@ -4,5 +4,7 @@
 
 <p class="Description">Description: <%= @post.description.to_plain_text %></p>
 
-<%= button_to 'Delete', @post, method: :delete, class: "btn btn-danger" %>
-<%= button_to 'Edit Post', edit_post_path, method: :get, class: "btn btn-warning" %>
+
+
+  <%= button_to 'Delete', @post, method: :delete, class: "btn btn-danger" %>
+  <%= button_to 'Edit Post', edit_post_path, method: :get, class: "btn btn-warning" %>

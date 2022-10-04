@@ -6,7 +6,7 @@
       <p class= "title">Author: <%= post.user.first_name%></p>
       <p class= "title">Title: <%= post.title %></p>
       <p class= "title">Description: <%= post.description.to_plain_text%></p>
-      <%= button_to "Show This Post", post_path(post), method: :get, class: "btn btn-info" %>
+      <%= button_to "Show This Post", post_path(post), method: :get, class: "btn btn-primary" %>
     </div>
   <% end %>
 <% else %>

@@ -6,6 +6,6 @@
   <div class= "mb-5">
     <p>Title: <%= post.title %></p>
     <p>Description: <%= post.description.to_plain_text %></p>
-    <%= button_to "Show This Post", post_path(post), method: :get %>
+    <%= button_to "Show This Post", post_path(post), method: :get, class: "btn btn-primary" %>
   </div>
 <% end %>
