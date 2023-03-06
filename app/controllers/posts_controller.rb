@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :require_user, only: [:edit, :update, :destroy]
  
 
@@ -17,17 +17,15 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user = current_user
      if @post.save
-      redirect_to @post, notice: "Post was successfully created."
+      redirect_to post_path(@post)
+      flash[:notice]= "Post was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
   end
 
 
-  def show
-    @post = Post.find(params[:id])
-
-  end
+  def show; end
 
   def destroy
     # @post = Post.find(params[:id])
@@ -44,16 +42,16 @@ class PostsController < ApplicationController
   def update
   # @post = Post.find(params[:id])
     if @post.update(post_params)
-    redirect_to @post, notice: "Post was successfully updated."
+      redirect_to @post, notice: "Post was successfully updated."
     else
-    render :edit, status: :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 
   private
 
     def require_user
-      redirect_to root_path unless @post.user == current_user
+      redirect_to @current_user unless @post.user == current_user
       flash[:notice] = "Unauthorized Action."
     end
 
@@ -64,6 +62,6 @@ class PostsController < ApplicationController
 
     def post_params
       params.require(:post)
-            .permit(:title, :description)
+            .permit(:title, :body, :image)
     end
 end

@@ -50,6 +50,8 @@ gem "image_processing", "~> 1.2"
 
 gem "paperclip", "~> 6.0.0"
 
+gem "mini_magick"
+
 group :development, :test do
   gem "factory_bot_rails"
   gem "faker", git: "https://github.com/faker-ruby/faker.git", branch: "master"
@@ -63,6 +65,7 @@ group :development do
   gem "web-console"
   gem "guard"
   gem "rack-mini-profiler"
+  gem "htmlbeautifier"
 end
 
 group :test do

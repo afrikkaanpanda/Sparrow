@@ -9,32 +9,37 @@
     </div>
   <% end %>
 
-	<div class="ml-4">
+	<div class="mb-2">
     <%= form.label :first_name %>
     <%= form.text_field :first_name, class: "form-control" %>
   </div>
 
-	<div class="ml-4">
+	<div class="mb-2">
     <%= form.label :last_name %>
     <%= form.text_field :last_name, class: "form-control" %>
   </div>
 
-	<div class="ml-4">
+	<div class="mb-2">
     <%= form.label :username %>
     <%= form.text_field :username, class: "form-control" %>
   </div>
 
-  <div class="ml-4">
+  	<div class="mb-2">
+    <%= form.label :bio %>
+    <%= form.text_area :bio, size: "3x3", class: "form-control" %>
+  </div>
+
+  <div class="mb-2">
     <%= form.label :email %>
     <%= form.text_field :email, class: "form-control" %>
   </div>
 
-  <div class="ml-4">
+  <div class="mb-2">
     <%= form.label :password %>
     <%= form.password_field :password, class: "form-control" %>
   </div>
 
-  <div class="ml-4">
+  <div class="mb-2">
     <%= form.label :password_confirmation %>
     <%= form.password_field :password_confirmation, class: "form-control" %>
   </div>

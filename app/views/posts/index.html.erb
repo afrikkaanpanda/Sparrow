@@ -1,14 +1,17 @@
 <h1 class= "title">Posts</h1>
 
-<% if @posts.any? %>
+<% if @posts.present? %>
   <% @posts.each do |post| %>
-    <div class= "mb-5">
-      <p class= "title">Author: <%= post.user.first_name%></p>
-      <p class= "title">Title: <%= post.title %></p>
-      <p class= "title">Description: <%= post.description.to_plain_text%></p>
-      <%= button_to "Show This Post", post_path(post), method: :get, class: "btn btn-primary" %>
+    <div class="card mb-2">
+      <div class="card-body">
+        <h5 class="card-title">Author: <%= link_to post.user.first_name, user_path(post.user) %></h5>
+        <h6 class="card-text">
+          <%= post.title %>
+        </h6>
+        <%= button_to "Show This Post", post_path(post), method: :get, class: "btn btn-primary" %>
+      </div>
     </div>
-  <% end %>
-<% else %>
+    <% end %>
+  <% else %>
   <p class="empty-state">NO POST TO DISPLAY</p>
 <% end %>

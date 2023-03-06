@@ -4,9 +4,11 @@ require "rails_helper"
 
 RSpec.describe "POST_sessions_path", type: :request do
  let(:user) { create(:user, first_name: "alando", last_name: "wilson", username: "panda.god", email: "alando.willo@gmail.com", password: "Password", password_confirmation: "Password") }
-  it "response to be redirected" do
-    post login_path, params: { user: {email: user.email, password: user.password} }
-    expect(response).to have_http_status(:redirect)
+ context "when email and password is correct" do 
+    it "response to be redirected" do
+      post login_path, params: { user: {email: user.email, password: user.password} }
+      expect(response).to have_http_status(:redirect)
+    end
   end
 
   context "when email is nil" do
